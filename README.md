@@ -1,27 +1,32 @@
-# TestApp
+# Draw figures
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+Реализовать отрисовку фигур базируясь на их текстовом описании, используя
+следующий формат:
 
-## Development server
+- figureName –p [x, y]... options
+где figureName - имя фигуры
+-p [x,y]...-координаты основных точек фигуры,
+options дополнительные параметры и опции фигуры.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Пример:
+- line -p [50, 50] [100, 100] -c rgb(255, 0, 0)
+- rectangle -p [50, 50] [100, 100] -c rgb(0, 255, 0) -b rgba(255, 0, 0, 0.3)
+- triangle -p [50, 50] [50, 100] [100, 100] -c rgb(0, 0, 255) -b rgba(255, 0, 0,
+0.3)
+- circle -p [75, 75] -r 25 -c rgba(255, 0, 0, 0.8) -b rgba(0, 255, 0, 0.3)
+- ellipse -p [75, 75] -r1 50 -r2 25 -c rgb(0, 255, 0) -b rgba(255, 0, 0, 0.3)
 
-## Code scaffolding
+Требования:
+ - Отрисовка фигуры по текстовому описанию.
+ - Поддержка цвета -c rgb(255, 0, 0) и заднего фона -b rgba(0, 255, 0, 0.3)
+фигуры. Прозрачность.
+ - Возможность отрисовать несколько фигур за раз.
+- Валидация входных параметров.
+- Если в решении не использован Angular - обязательно использование шаблона
+проектирования(MVC/MVP/MVVM).
+- Сохранение состояния между перезагрузками.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Дополнительным плюсом будет:
+- Поддержка других фигур.
+- Поддержка дополнительных форматов цветов – HEX, HSV, HSL и тд.
+- Дополнительные опции при отображении фигуры(толщина линии, тип линии и тд).
