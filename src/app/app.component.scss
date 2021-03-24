@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    border: 2px solid black;
+}
+
+textarea {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 100px;
+    max-height: 150px;
+    background-color: black;
+    color: white;
+}
